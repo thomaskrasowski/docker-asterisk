@@ -1,6 +1,6 @@
 FROM centos:centos7
-MAINTAINER Doug Smith <info@laboratoryb.org>
-ENV build_date 2017-03-01
+MAINTAINER Thomas Krasowski <thomaskrasowski@hotmail.com>
+ENV build_date 2017-12-09
 
 RUN yum update -y && \
     yum install -y epel-release && \
@@ -46,7 +46,7 @@ RUN make menuselect.makeopts
 RUN menuselect/menuselect \
   --disable BUILD_NATIVE \
   --enable cdr_csv \
-  # --enable chan_sip \
+  --enable chan_sip \ #was hasched , to check
   --enable res_snmp \
   --enable res_http_websocket \
   --enable res_hep_pjsip \
